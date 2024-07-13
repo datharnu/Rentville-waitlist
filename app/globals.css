@@ -78,54 +78,11 @@
 
 .background-with-noise {
   background-color: #134f2c;
-
+  opacity: 0.9;
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh; /* Example height */
-}
-
-/*  */
-
-.background-content {
-  position: relative; /* Ensure content is positioned relative to the container */
-  z-index: 2; /* Ensure content is above the noise */
-}
-
-@keyframes ocean-noise {
-  0% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(-5%, -5%);
-  }
-  20% {
-    transform: translate(5%, -5%);
-  }
-  30% {
-    transform: translate(-5%, 5%);
-  }
-  40% {
-    transform: translate(5%, 5%);
-  }
-  50% {
-    transform: translate(-5%, -5%);
-  }
-  60% {
-    transform: translate(5%, -5%);
-  }
-  70% {
-    transform: translate(-5%, 5%);
-  }
-  80% {
-    transform: translate(5%, 5%);
-  }
-  90% {
-    transform: translate(-5%, -5%);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
 }
