@@ -1,113 +1,191 @@
 import Image from "next/image";
-
+import Logo from "../public/RVMARKWC.svg";
+import young from "../public/youngmale.jpg";
+import couple from "../public/couple.jpg";
+import handsome from "../public/study.jpg";
+import {
+  ChevronRight,
+  Facebook,
+  Instagram,
+  Linkedin,
+  TicketIcon,
+  Twitter,
+} from "lucide-react";
+import Link from "next/link";
+import FaqComponent from "./components/FaqComponents";
+import WaitListForm from "./components/FormComponent";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <section
+      className="bg-bgMain bg-cover min-h-screen bg-no-repeat"
+      style={{
+        backgroundImage: `url(data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3…arent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E), linear-gradient(146deg, rgba(255, 239, 219, 0.30) 0%, rgba(166, 223, 255, 0.141) 100%), url("/backgroundImg.jpg")`,
+        backgroundSize: "512px, cover, cover",
+        backgroundPosition: "center, 0% 0%, center",
+        backgroundRepeat: "repeat, repeat, repeat",
+        backgroundColor: "#FCFCFC",
+        backdropFilter: "blur(8px)", // Blur effect
+        WebkitBackdropFilter: "blur(8px)", // For Safari
+        position: "relative", // Ensure z-index works correctly
+      }}
+    >
+      <div className="backdrop-blur-md fixed top-0 left-0 w-full h-screen -z-10"></div>
+      <div className="background-with-noise h-[80vh] border-b-8 border-tertiary">
+        <div className="flex flex-col h-full gap-5 lg:gap-10 items-center justify-center">
+          {/* logo and title */}
+          <Image
+            src={Logo}
+            alt="Logo"
+            width={40}
+            height={16}
+            className="lg:w-[3.2rem] "
+          />
+          <div className=" text-center ">
+            <h1 className="bitter text-3xl lg:text-[65px] text-white">
+              RentVille
+            </h1>
+          </div>
+          <hr className="w-16 mx-auto border-2 border-tertiary" />
+          <div className="lg:px-[30rem]">
+            <p className="font-thin text-center text-sm text-white mx-5">
+              Tired of the hassle of finding a place near Lagos State
+              University? RentVille makes house hunting stress-free. Join our
+              waitlist now for a hassle-free experience in student housing.
+            </p>
+          </div>
+          {/* Button waitlist */}
+
+          <a href="#about">
+            <button className="text-sm border-[3px]  px-7 gap-1 py-3 rounded-[2rem]  hover:border-white font-semibold items-center border-tertiary text-white flex">
+              Join Waitlist
+              <ChevronRight className="w-4" />
+            </button>
           </a>
         </div>
       </div>
+      {/* Image section with the dscription */}
+      <article className=" border-tertiary border-b-8 lg:border-0" id="about">
+        <div className=" lg:flex w-full mt-32  lg:w-[80%] mx-auto">
+          <div className=" lg:w-1/2 ">
+            <Image
+              src={young}
+              alt="image"
+              width={600}
+              height={800}
+              className=" w-full h-full"
+            />
+          </div>
+          <div className="bg-white p-12 px-20  place-content-center text-center space-y-5 lg:w-1/2 ">
+            <h1 className="bitter text-3xl lg:text-[45px] leading-relaxed text-[#59606E]">
+              Comprehensive Property Database
+            </h1>
+            <hr className="w-16 mx-auto border-2 border-tertiary" />
+            <p className="  text-center text-[16px] text-text leading-8 lg:mx-5">
+              Find the perfect home by searching based on location, price, and
+              amenities. Our extensive database ensures you have plenty of
+              options to choose from.
+            </p>
+          </div>
+        </div>
+        {/* second image */}
+        <div className=" flex flex-col-reverse lg:flex-row w-full  lg:w-[80%] mx-auto">
+          <div className="bg-white p-12 px-20  place-content-center text-center space-y-5 lg:w-1/2 ">
+            <h1 className="bitter text-3xl lg:text-[45px] leading-relaxed text-[#59606E]">
+              Verified Agents
+            </h1>
+            <hr className="w-16 mx-auto border-2 border-tertiary" />
+            <p className="  text-center text-[16px] text-text leading-8 lg:mx-5">
+              Say goodbye to rental scams. All our agents undergo thorough
+              background checks, so you can rent with confidence.
+            </p>
+          </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+          <div className=" lg:w-1/2 ">
+            <Image
+              src={couple}
+              alt="image"
+              width={600}
+              height={800}
+              className=" w-full h-full"
+            />
+          </div>
+        </div>
+        {/* third image */}
+        <div className=" lg:flex w-full  lg:w-[80%] mx-auto">
+          <div className=" lg:w-1/2 ">
+            <Image
+              src={handsome}
+              alt="image"
+              width={600}
+              height={800}
+              className=" w-full h-full"
+            />
+          </div>
+          <div className="bg-white p-12 px-20  place-content-center text-center space-y-5 lg:w-1/2 ">
+            <h1 className="bitter text-3xl lg:text-[45px] leading-relaxed text-[#59606E]">
+              Secure Transactions
+            </h1>
+            <hr className="w-16 mx-auto border-2 border-tertiary" />
+            <p className="  text-center text-[16px] text-text leading-8 lg:mx-5">
+              With our integrated payment system, you can securely pay deposits
+              and rent directly through the app. Your personal and financial
+              information is protected with industry-standard encryption.
+            </p>
+          </div>
+        </div>
+      </article>
+      {/* FAQ */}
+      <FaqComponent />
+      <article className="bg-[#23331DED] border-tertiary border-t-8 text-white py-16 lg:py-10">
+        <div className="   place-content-center text-center space-y-5 mx-10 ">
+          <h1 className="bitter text-3xl lg:text-[45px] leading-relaxed ">
+            Get Started For Free!
+          </h1>
+          <hr className="w-16 mx-auto border-2 border-tertiary" />
+          <p className="  text-center text-sm font-extralight leading-8">
+            With RentVille, we help property owners showcase their amazing
+            properties to numerous vetted
+            <br />
+            tenants while saving the tenants from numerous unexplainable fees.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        </div>
+        <WaitListForm />
+      </article>
+      <footer className="w-full bg-primary  py-24">
+        <div className=" lg:flex-row lg:flex justify-between lg:w-[80%] lg:mx-auto mx-20  flex flex-col-reverse place-items-center ">
+          <div className="text-[#FFFFFF66] lg:w-1/2 space-y-5 lg:space-y-0 text-center lg:text-left mt-5 font-light text-sm ">
+            <h1>Contact Us</h1>
+            <p className="mb-4">
+              Have any questions or need more information? Feel free to reach
+              out to us at{" "}
+              <span className="text-tertiary font-thin">
+                rentvilleinfo@gmail.com
+              </span>{" "}
+              call <span className="text-tertiary font-thin">09070004086</span>{" "}
+              or follow us on social media for the latest updates.
+            </p>
+            <p>©All rights reserved. 2024 B-10 Technologies</p>
+          </div>
+          <div className="flex items-center gap-5">
+            <a
+              href="https://www.facebook.com/profile.php?id=61561726746186"
+              className=""
+            >
+              <Facebook className="text-white hover:text-tertiary" />
+            </a>
+            <a href="https://x.com/Rentville_?s=08">
+              <Twitter className="text-white hover:text-tertiary" />
+            </a>
+            <a href="https://www.instagram.com/rentville_?igsh=aGU2Nmx0aHlmMnJ3">
+              <Instagram className="text-white hover:text-tertiary" />
+            </a>
+            <a href="https://www.linkedin.com/in/rentville-ng-6a738b317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+              <Linkedin className="text-white hover:text-tertiary" />
+            </a>
+          </div>
+        </div>
+      </footer>
+      {/* Form */}
+    </section>
   );
 }

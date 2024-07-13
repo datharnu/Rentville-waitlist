@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Zilla_Slab, Bitter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const zilla = Zilla_Slab({
+  subsets: ["latin"],
+  weight: "500",
+  variable: "--font-zilla",
+  display: "swap",
+});
+
+const bitter = Bitter({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bitter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${zilla.variable} ${bitter.variable}`}>
       <body className={inter.className}>{children}</body>
     </html>
   );
