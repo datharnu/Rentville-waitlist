@@ -65,7 +65,7 @@ export default function Home() {
       </div>
       {/* Image section with the dscription */}
       <article className=" border-tertiary border-b-8 lg:border-0" id="about">
-        <div className=" lg:flex w-full mt-32  lg:w-[80%] mx-auto">
+        <div className=" lg:flex w-full lg:mt-32 mt-10 lg:w-[80%] mx-auto">
           <div className=" lg:w-1/2 ">
             <Image
               src={young}
