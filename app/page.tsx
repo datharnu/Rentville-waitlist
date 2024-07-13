@@ -56,7 +56,7 @@ export default function Home() {
             </div>
             <hr className="w-16 mx-auto border-2 border-tertiary" />
             <div className="lg:px-[30rem]">
-              <p className="font-thin text-center text-sm text-white mx-5">
+              <p className=" leading-8 text-center text-sm text-white mx-5">
                 Tired of the hassle of finding a place near Lagos State
                 University? RentVille makes house hunting stress-free. Join our
                 waitlist now for a hassle-free experience in student housing.
