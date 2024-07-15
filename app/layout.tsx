@@ -30,6 +30,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${zilla.variable} ${bitter.variable}`}>
+      <head>
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link
+          rel="shortcut icon"
+          href={`/favicon.ico?v=${new Date().getTime()}`}
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
